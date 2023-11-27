@@ -81,91 +81,121 @@
 // console.log(students);
 
 
-const cars = [
-    {
-        brand: 'Mercedes',
-        model: 'class s',
-        engine: 'gasoline',
-    },
-    {
-        brand: 'Audi',
-        model: 'R8',
-        engine: 'gasoline',
-    },
-    {
-        brand: 'Mercedes',
-        model: 'eqs',
-        engine: ' electric',
-    },
-    {
-        brand: 'Mercedes',
-        model: 'gt 63 s amg',
-        engine: 'gasoline',
-    },
-    {
-        brand: 'BMW',
-        model: 'i8',
-        engine: 'electric',
-    },
-    {
-        brand: 'Ferrari',
-        model: 'sf-90 stradale',
-        engine: 'electric gasoline',
-    },
-    {
-        brand: 'Lamborghini',
-        model: 'Urus',
-        engine: 'gasoline',
-    },
-    {
-        brand: 'BMW',
-        model: 'X5',
-        engine: 'diesel',
-    },
-    {
-        brand: 'Nissan',
-        model: 'Boh',
-        engine: 'diesel',
-    },
-    {
-        brand: 'Toyota',
-        model: 'Yougo',
-        engine: 'diesel',
-    },
-    {
-        brand: 'Audi',
-        model: 'RSQ8',
-        engine: 'gasoline',
-    },
-    {
-        brand: 'Mercedes',
-        model: 'class eqc',
-        engine: 'electric',
-    },
+// const cars = [
+//     {
+//         brand: 'Mercedes',
+//         model: 'class s',
+//         engine: 'gasoline',
+//     },
+//     {
+//         brand: 'Audi',
+//         model: 'R8',
+//         engine: 'gasoline',
+//     },
+//     {
+//         brand: 'Mercedes',
+//         model: 'eqs',
+//         engine: ' electric',
+//     },
+//     {
+//         brand: 'Mercedes',
+//         model: 'gt 63 s amg',
+//         engine: 'gasoline',
+//     },
+//     {
+//         brand: 'BMW',
+//         model: 'i8',
+//         engine: 'electric',
+//     },
+//     {
+//         brand: 'Ferrari',
+//         model: 'sf-90 stradale',
+//         engine: 'electric gasoline',
+//     },
+//     {
+//         brand: 'Lamborghini',
+//         model: 'Urus',
+//         engine: 'gasoline',
+//     },
+//     {
+//         brand: 'BMW',
+//         model: 'X5',
+//         engine: 'diesel',
+//     },
+//     {
+//         brand: 'Nissan',
+//         model: 'Boh',
+//         engine: 'diesel',
+//     },
+//     {
+//         brand: 'Toyota',
+//         model: 'Yougo',
+//         engine: 'diesel',
+//     },
+//     {
+//         brand: 'Audi',
+//         model: 'RSQ8',
+//         engine: 'gasoline',
+//     },
+//     {
+//         brand: 'Mercedes',
+//         model: 'class eqc',
+//         engine: 'electric',
+//     },
+// ];
+
+// const gasCars = cars.filter((singleCar) =>{
+//     if (singleCar.engine.includes('gasoline')){
+//         return true;
+//     }
+// });
+
+// console.log(gasCars);
+
+// // ? const dieselCars = cars.filter((singleCar) => singleCar.engine.includes('diesel'));
+
+// const dieselCars = cars.filter((singleCar) =>{
+//     if (singleCar.engine.includes('diesel')){
+//         return true;
+//     }
+// });
+
+// console.log(dieselCars);
+
+// const otherCars = cars.filter((singleCar) =>{
+//     if (singleCar.engine != 'diesel' && singleCar.engine != 'gasoline')
+//         return true;
+// });
+
+// console.log(otherCars);
+
+
+const people = [
+    { nome : 'Gino',  cognome: 'Quadretto',  eta: 4 },
+    { nome : 'Ginetta',  cognome: 'Quandante',  eta: 19 },
+    { nome : 'Ginina',  cognome: 'Quandino',  eta: 3 },
+    { nome : 'Ginettina',  cognome: 'Quasimodo',  eta: 10 },
+    { nome : 'Gianginina',  cognome: 'Quarobbo',  eta: 80 },
+    { nome : 'Giunotti',  cognome: 'Qualinquo',  eta: 25 },
+    { nome : 'Gianbruna',  cognome: 'Quoretto',  eta: 36 },
+    { nome : 'Gianluigi',  cognome: 'Qatar',  eta: 75 },
+    { nome : 'Giorgio',  cognome: 'Quilando',  eta: 66 },
+    { nome : 'Giovanna',  cognome: 'Quilando',  eta: 33 },
+    { nome : 'Gioletta',  cognome: 'Quilando',  eta: 28 },
 ];
 
-const gasCars = cars.filter((singleCar) =>{
-    if (singleCar.engine.includes('gasoline')){
-        return true;
-    }
+const newPeopleArray = people.map((singlePerson) =>{
+    singlePerson.nomeCompleto = singlePerson.nome + ' ' + singlePerson.cognome;
+    singlePerson.maggiorenne = singlePerson.eta >= 18;
+    return singlePerson;
 });
 
-console.log(gasCars);
+console.log(newPeopleArray);
 
-// ? const dieselCars = cars.filter((singleCar) => singleCar.engine.includes('diesel'));
-
-const dieselCars = cars.filter((singleCar) =>{
-    if (singleCar.engine.includes('diesel')){
+const adults = newPeopleArray.filter((person) =>{
+    if (person.maggiorenne === true){
         return true;
-    }
-});
+    }}
+);
 
-console.log(dieselCars);
-
-const otherCars = cars.filter((singleCar) =>{
-    if (singleCar.engine != 'diesel' && singleCar.engine != 'gasoline')
-        return true;
-});
-
-console.log(otherCars);
-
+console.log(adults);''
